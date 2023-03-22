@@ -1,11 +1,8 @@
 from fastapi import FastAPI
 from mangum import Mangum
-from pydantic import BaseModel 
 
 app = FastAPI()
 
-class Name(BaseModel):    
-   name : str 
 
 @app.get("/")
 def read_root():
@@ -22,7 +19,7 @@ def read_name(name: str = None):
 
 @app.post("/callname")
 def create_name():
-   name = "aa"
+   name = "thawanrat"
    return {"hello": name}
 
 handler = Mangum(app)
