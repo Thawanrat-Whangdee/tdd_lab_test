@@ -52,7 +52,7 @@ jobs:
           command: aws s3 cp function.zip s3://thwr/function.zip
       - run:
           name: Deploy new Lambda
-          command: aws lambda update-function-code --function-name fastapi --s3-bucket thwr --s3-key function.zip
+          command: aws lambda update-function-code --function-name fast --s3-bucket thwr --s3-key function.zip
 
 workflows:
   build-test-and-deploy:
