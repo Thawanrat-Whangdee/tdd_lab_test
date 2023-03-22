@@ -23,8 +23,8 @@ def read_name(name: str = None):
 @app.post("/callname")
 def read_name(request: Name):
    data : {
-      'hello': request.name,
+      'name': request.name,
    }
-   return data
+   return {"hello": data}
 
 handler = Mangum(app)
