@@ -5,7 +5,7 @@ from pydantic import BaseModel
 app = FastAPI()
 
 class Name(BaseModel):    
-   name : str
+   name : str = "thawanrat"
 
 @app.get("/")
 def read_root():
@@ -21,7 +21,7 @@ def read_name(name: str = None):
     return {"hello": name}
 
 @app.post("/callname")
-def create_name(name: str = "thawanrat"):
+def create_name(name: Name):
    return {"hello": name}
 
 handler = Mangum(app)
