@@ -18,12 +18,10 @@ def read_item(item_id: int, q: str = None):
 
 @app.get("/callname/{name}")
 def read_name(name: str = None):
-   global names
-   names = name
     return {"hello": name}
 
 @app.post("/callname")
 def create_name():
-   return {"hello": names}
+   return {"hello": name}
 
 handler = Mangum(app)
