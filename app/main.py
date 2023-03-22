@@ -4,7 +4,7 @@ from pydantic import BaseModel
 
 app = FastAPI()
 
-Class Name(BaseModel):    
+class Name(BaseModel):    
    name : str
 
 @app.get("/")
@@ -21,10 +21,7 @@ def read_name(name: str = None):
     return {"hello": name}
 
 @app.post("/callname")
-def read_name(request: Name):
-   data : {
-      'name': request.name,
-   }
-   return {"hello": data}
+def create_name(name: Name):
+   return {"hello": name}
 
 handler = Mangum(app)
