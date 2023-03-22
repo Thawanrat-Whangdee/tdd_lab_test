@@ -4,7 +4,7 @@ from pydantic import BaseModel
 
 app = FastAPI()
 
-Class Name(BaseModel):    #นำ class BaseModel มาใส่ไว้ในวงเล็บ
+Class Name(BaseModel):    
    name : str
 
 @app.get("/")
